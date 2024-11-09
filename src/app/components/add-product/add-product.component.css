@@ -1,0 +1,117 @@
+h2{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: "Baloo Paaji", cursive; 
+    font-weight: 500;
+    line-height: 1.2;
+    color: #695aa6;
+    font-size: 30px;
+}
+
+input{
+    width: 300px;
+    height: 0;
+    padding: 18px;
+    font-size: 16px;
+    border: 1.5px solid #dedede;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+textarea{
+    width: 330px;
+    height: 120px;
+    border-radius: 5px;
+    border: 1.5 solid #dedede;
+    font-size: 16px;
+}
+
+label{
+    font-family: "Baloo Paaji", cursive;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+small{
+    color: #ff0000;
+}
+
+button{
+    width: 340px;
+    padding: 12px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.btn-primary{
+    color: #fff;
+    font-weight: bold;
+    background-color: #BA55D3;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: #DA70D6;
+}
+
+.section{
+    padding: 70px 10px;
+}
+
+.section-title{
+    margin-bottom:6px ;
+    font-weight: 400;
+    opacity: .6;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    display: flex;
+    overflow-y: auto;
+}
+
+.form-control{
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    max-height: 80%;
+    max-width: 800;
+}
+
+.select-box{
+    width: 337px;
+    height: 38px;
+    border: 1px solid #dedede;
+    margin: 5px 0 10px;
+    border-radius: 5px;
+}
+
+.success{
+    text-align: center;
+    margin-top: 15px;
+    background-color: 	#00ff00;
+    -webkit-text-fill-color: #fff;
+    font-weight: bold;
+}
+
+.unsuccess{
+    text-align: center;
+    margin-top: 15px;
+    background-color: 	#dc143c;
+    -webkit-text-fill-color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}

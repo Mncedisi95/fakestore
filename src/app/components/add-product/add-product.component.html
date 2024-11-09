@@ -1,1 +1,63 @@
-<p>add-product works!</p>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Add Product</h2>
+    </div>
+    <div class="form-container">
+        <form [formGroup]="productForm" class="form-control">
+
+            <div>
+                <label>Product Title:</label>
+                <input id="title" formControlName="title" type="text" placeholder="Enter Product Title"/>
+                <div *ngIf="productForm.get('title')?.touched">
+                    <small *ngIf="productForm.get('title')?.errors?.['required']">*Product title is required.</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Category:</label>
+                <select id="category" formControlName="category" class="select-box">
+                    <option value="" disabled selected>Select Product Category</option>
+                    <option value="jewelery">Jewelery</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="men's clothing">Men's Clothing</option>
+                    <option value="women's clothing">Women's Clothing</option>
+                </select>
+                <div *ngIf="productForm.get('category')?.touched">
+                    <small *ngIf="productForm.get('category')?.errors?.['required']">*Product Category is required.</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Price:</label>
+                <input id="price" formControlName="price" type="text" placeholder="Enter Product Price"/>
+                <div *ngIf="productForm.get('price')?.touched">
+                    <small *ngIf="productForm.get('price')?.errors?.['required']">*Product Price is required</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Image:</label>
+                <input id="image" formControlName="image" type="text" placeholder="Enter Product Image Link"/>
+                <div *ngIf="productForm.get('image')?.touched">
+                    <small *ngIf="productForm.get('image')?.errors?.['required']">*Product Image Link is required</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Description:</label>
+                <textarea id="description" formControlName="description" placeholder="Enter Product Description"></textarea>
+                <div *ngIf="productForm.get('description')?.touched">
+                    <small *ngIf="productForm.get('description')?.errors?.['required']">*Product Description is required</small>
+                </div>
+            </div>
+            <button class="btn-primary" (click)="addProduct()">Add Product</button>
+            <div>
+                <input *ngIf="showSuccessMessage" type="text" class="success" placeholder="New Product Added Successfully."/>
+            </div>
+            <div>
+                <input *ngIf="showErrorMessage" type="text" class="unsuccess" placeholder="Adding New Product Failed."/>
+            </div>
+        </form>
+    </div>
+</section>
+
