@@ -1,1 +1,16 @@
-
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Products</h2>
+    </div>
+    <div class="product-container">
+        <div class="product-list">
+            <div class="product-card" *ngFor="let product of products" (click)="goToProductDetails(product)">
+                <div>
+                    <img [src]="product.image"/>
+                </div>
+                <h5>{{product.title}}</h5>
+                <h6>{{product.price | currency}}</h6>
+            </div>
+        </div>
+    </div>
+</section>

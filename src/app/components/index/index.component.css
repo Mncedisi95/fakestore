@@ -1,0 +1,68 @@
+h2, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: "Baloo Paaji", cursive; 
+    font-weight: 500;
+    line-height: 1.2;
+    color: #695aa6;
+}
+  
+h2{
+    font-size: 30px;
+}
+    
+h5{
+    font-size: 14px;
+}
+  
+h6{
+    font-size: 14px;
+}
+
+.section{
+    padding: 70px 10px;
+}
+
+.section-title{
+    margin-bottom:6px ;
+    font-weight: 400;
+    opacity: .6;
+}
+
+.product-container{
+    display: flex;
+    overflow-y: auto;
+}
+
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 26px;
+    margin: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+.product-card{
+    border: 1px solid #ddd;
+    background-color: #f3f2ee;
+    height: auto;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.product-card img{
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.product-card:hover{
+    background-color: #fff;
+}
