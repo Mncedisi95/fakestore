@@ -1,1 +1,27 @@
-<p>sign-in works!</p>
+<div class="container">
+    <form [formGroup]="loginForm" class="form-control">
+        <h1>SignIn</h1>
+
+        <div>
+            <label>Email:</label>
+            <input type="text" formControlName="username" placeholder="username"/>
+            <div *ngIf="loginForm.get('username')?.touched">
+                <small *ngIf="loginForm.get('username')?.errors?.['required']">*Username is required</small>
+            </div>
+        </div>
+    
+        <div>
+            <label>Password:</label>
+            <input type="password" formControlName="password" placeholder="password"/>
+            <div *ngIf="loginForm.get('password')?.touched">
+                <small *ngIf="loginForm.get('password')?.errors?.['required']">*Password is required</small>
+            </div>
+        </div>
+    
+        <button class="btn-primary" type="submit" (click)="authenticate()">Login</button>
+        <div>
+            <input *ngIf="showErrorMesage" class="unsuccess" placeholder="Incorrect Password or Email"/>
+        </div>
+    </form>
+</div>
+
