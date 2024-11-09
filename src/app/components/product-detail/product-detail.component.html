@@ -1,1 +1,24 @@
-<p>product-detail works!</p>
+<div class="container">
+    <h2>Product Details</h2>
+    <div *ngIf="product" class="product-detail">
+        <h4>{{product.title}}</h4>
+        <div style="display: flex;">
+            <img [src]="product.image"/>
+            <div style="margin: 10px;">
+                <p class="product-item"><strong>Category:</strong>{{product.category}}</p>
+                <p class="product-item"><strong>Price:</strong>{{product.price | currency}}</p>
+                <p class="product-item"><strong>Rate</strong></p>
+            </div>
+        </div>
+        <p><strong>Product Description: </strong><span>{{product.description}}</span></p>
+        <button (click)="editProduct()">Edit</button>
+        <button (click)="removeProduct()">Remove</button>
+        <div>
+            <input *ngIf="showSuccessMessage" type="text" class="success" placeholder="Product Removed Successfully."/>
+        </div>
+        <div>
+            <input *ngIf="showFailedMessage" type="text" class="unsuccess" placeholder="Product Failed To be Removed."/>
+        </div>
+    </div>
+</div>
+

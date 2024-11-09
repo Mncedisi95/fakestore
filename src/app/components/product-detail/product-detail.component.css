@@ -1,0 +1,100 @@
+h2,h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: "Baloo Paaji", cursive; 
+    line-height: 1.2;
+    color: #695aa6;
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input{
+    width: 300px;
+    height: 0;
+    padding: 18px;
+    font-size: 16px;
+    border: 1.5px solid #dedede;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.product-item{
+    font-size: 15px;
+    font-family:"Baloo Paaji", cursive; ;    
+}
+
+button{
+    margin: 15px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #BA55D3;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #DA70D6;
+}
+
+.container{
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.product-detail{
+    padding: 20px 15px;
+    max-width: 800px;
+    max-height: 600px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    background-color: #f3f2ee;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.product-detail img{
+    max-width: 200px;
+    margin-bottom: 20px;
+    height: 320px;
+}
+
+.product-detail p{
+    margin: 5px 0;
+}
+
+.success{
+    text-align: center;
+    margin-top: 15px;
+    background-color: 	#00ff00;
+    -webkit-text-fill-color: #fff;
+    font-weight: bold;
+}
+
+.unsuccess{
+    text-align: center;
+    margin-top: 15px;
+    background-color: 	#dc143c;
+    -webkit-text-fill-color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
