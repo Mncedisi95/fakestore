@@ -4,6 +4,22 @@
     </div>
     <div class="product-container">
         <div class="product-list">
+            <form>
+                <div>
+                    <input type="text" placeholder="search"/> 
+                </div>
+                <div>
+                    <a>Fliter by Category:</a>
+                    <select class="select-box">
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="jewelery">Jewelery</option>
+                        <option value="elelctronics">Electronics</option>
+                        <option value="men's clothing">Men's Clothing</option>
+                        <option value="women's clothing">Women's Clothing</option>
+                    </select>
+                </div>
+            </form>
+    
             <div class="product-card" *ngFor="let product of products" (click)="goToProductDetails(product)">
                 <div>
                     <img [src]="product.image"/>
