@@ -1,1 +1,56 @@
-<p>edit-product works!</p>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Edit Product</h2>
+    </div>
+    <div class="form-container">
+        <form [formGroup]="productForm" class="form-control" *ngIf="product">
+
+            <div>
+                <label>Product Title:</label>
+                <input id="title" formControlName="title" type="text"/>
+                <div *ngIf="productForm.get('title')?.touched">
+                    <small *ngIf="productForm.get('title')?.errors?.['required']">*Product title is required.</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Category:</label>
+                <select id="category" formControlName="category" class="select-box">
+                    <option value="jewelery">Jewelery</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="men's clothing">Men's Clothing</option>
+                    <option value="women's clothing">Women's Clothing</option>
+                </select>
+                <div *ngIf="productForm.get('category')?.touched">
+                    <small *ngIf="productForm.get('category')?.errors?.['required']">*Product Category is required.</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Price:</label>
+                <input id="price" formControlName="price" type="text"/>
+                <div *ngIf="productForm.get('price')?.touched">
+                    <small *ngIf="productForm.get('price')?.errors?.['required']">*Product Price is required</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Image:</label>
+                <input id="image" formControlName="image" type="text"/>
+                <div *ngIf="productForm.get('image')?.touched">
+                    <small *ngIf="productForm.get('image')?.errors?.['required']">*Product Image Link is required</small>
+                </div>
+            </div>
+    
+            <div>
+                <label>Product Description:</label>
+                <textarea id="description" formControlName="description"></textarea>
+                <div *ngIf="productForm.get('description')?.touched">
+                    <small *ngIf="productForm.get('description')?.errors?.['required']">*Product Description is required</small>
+                </div>
+            </div>
+            <button class="btn-primary">Edit Product</button>
+        </form>
+    </div>
+</section>
+
