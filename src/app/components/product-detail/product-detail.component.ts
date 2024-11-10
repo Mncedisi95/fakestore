@@ -18,14 +18,29 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductDetailComponent {
   
-   // declaration of properties
+   /**
+    * respresent product from fkakestore api
+    * @property {any} product
+    */
    product : any | undefined
+
+   /**
+    * Represent product ID
+    * @property {number} productId
+    */
    productId : number = 0
+
+   /**
+    * @property {boolean} showSuccessMessage - represent success message
+    * @property {boolean} showFailedMessage - represnet error message
+    */
    showSuccessMessage : boolean = false; showFailedMessage : boolean = false
  
    /**
+    * @constructor
     * @param activatedRoute 
-    * @param productService 
+    * @param productService
+    * @param router 
     */
    constructor(private router: Router,private activatedRoute:ActivatedRoute,private productService:ProductService){}
  
@@ -55,13 +70,16 @@ export class ProductDetailComponent {
   }
   
    /**
+   * @method editProduct
    * @description Helper function that redirects user to edit product component
    */
    editProduct():void{
+    // navigate to edit product component/page
     this.router.navigate(['/editproduct', this.productId])
   }
 
-   /**
+  /**
+  * @method removeProduct
    *@description Helper function that remove product from fakestore api 
   */
  removeProduct():void{

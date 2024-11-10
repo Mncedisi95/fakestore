@@ -19,7 +19,8 @@ import { UserService } from '../../services/user.service';
 export class UsersComponent {
 
  /**
- * @property users
+  * represents users
+ * @property {any} users
  */
   users : any[] = []
 

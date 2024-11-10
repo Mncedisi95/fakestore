@@ -18,12 +18,22 @@ import { ProductService } from '../../services/product.service';
 })
 export class AddProductComponent {
 
-  // declaration of properties
+  /**
+   * Represent product form
+   * @property {FormGroup} productForm 
+   */
   productForm : FormGroup
+
+  /**
+   * @property {boolean}  showSuccessMessage - represent success message
+   * @property {boolean} showErrorMessage  - represent error message
+   */
   showSuccessMessage: boolean = false; showErrorMessage : boolean = false
 
   /**
-  * @param formBuilder 
+  * @constructor
+  * @param formBuilder
+  * @param productService 
   */
   constructor(private formBuilder: FormBuilder,private productService:ProductService){
     // Initialization of product form
@@ -38,6 +48,7 @@ export class AddProductComponent {
   }
 
   /**
+   * @method addProduct 
    * @description Helper function that add new product to fakestore api
    */
   addProduct(){

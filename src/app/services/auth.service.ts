@@ -38,7 +38,7 @@ export class AuthService {
   * @description Helper function that authenticate user from the fakestore api
   * @param username  - The user's username
   * @param password - The user's password
-  * @returns current user login
+  * @returns {userdata} - current user logged in
   */
   authenticate(username: string, password: any): Observable<any> {
     // Send HTTP POST Request
@@ -59,7 +59,7 @@ export class AuthService {
   /**
    * @method getCurrentUser
    * @description helper function that get the user that is log in
-   * @returns the current user
+   * @returns {user} The current user
    */
   getCurrentUser(): any {
     if (isPlatformBrowser(this.platformId)) {
@@ -75,7 +75,7 @@ export class AuthService {
 /**
  * @method setCurrentUser
  * @description Helper function that set the current user
- * @param user - the current user
+ * @param user - The user
  */
   setCurrentUser(user: any): any {
     if (isPlatformBrowser(this.platformId)) {
@@ -87,7 +87,7 @@ export class AuthService {
   /**
    * @method currentUser
    * @description helper function that get current user subject
-   * @returns the current user subject
+   * @returns {BehaviorSubject} - The current user subject
    */
    get currentUser(): Observable<any>{
     // return the current user subject
@@ -96,8 +96,8 @@ export class AuthService {
 
   /**
    * @method isLoggedIn
-   * @description helper function that checks user is logged in or not.
-   * @returns true if user is logged in else false
+   * @description helper function that checks if a user is logged in.
+   * @returns {boolean} True if a user is logged in, false otherwise
    */
   isLoggedIn():boolean{
     // return current user

@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 /**
  * @author Mncedisi Masondo
@@ -17,27 +18,38 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class SignInComponent {
 
-  // declaration of properties
+  /**
+   * represent login form
+   * @property {FormGroup} loginForm 
+   */
   loginForm : FormGroup
+
+  /**
+   * represent error message
+   * @property {boolean} showErrorMesage 
+   */
   showErrorMesage : boolean = false
 
   /**
-   * @param formBuilder 
+   * @constructor
+   * @param formBuilder
+   * @param authService 
    */
-  constructor(private formBuilder:FormBuilder, /**private authService:AuthService */){
+  constructor(private formBuilder:FormBuilder, private authService:AuthService){
     // Initialization of login form
     this.loginForm = this.formBuilder.group({
       //declaration of properties -- username and password
-      username : ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      username : ['', [Validators.required]], // validates username
+      password: ['', [Validators.required]] // validates password
     })
   }
 
   /**
+   * @method authenticate
    * @description Helper function that authenticate user from fakestore api 
    * 
-   * @param username - user username
-   * @param password - user password
+   * @param username - the user's username
+   * @param password - the user's password
    */
   authenticate(){
     // declaration of properties -- password and username
@@ -45,8 +57,8 @@ export class SignInComponent {
     const password = this.loginForm.get('password')?.value
 
     // call the helper function from the auth service to authenticate user
-      /**  this.authService.authenticate(username,password).subscribe(data => {
-    }) */
+    this.authService.authenticate(username,password).subscribe(data => {
+    }) 
   }
 
 }

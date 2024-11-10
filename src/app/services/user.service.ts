@@ -14,7 +14,8 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   /**
-   * @property dataurl - api link
+   * Represent fakestore api link
+   * @property dataurl 
    */
   private dataurl = 'https://fakestoreapi.com/users'
 
@@ -25,9 +26,9 @@ export class UserService {
   constructor(private httpClient:HttpClient) { }
 
   /**
+   * @method getUsers
    * @description helper function that get all users from fakestore api
-   * 
-   * @returns the list of users
+   * @returns {users} - The list of users
    */
   getUsers(): Observable<any>{
     // send HTTP GET request

@@ -18,10 +18,14 @@ import { Router } from '@angular/router';
 })
 export class IndexComponent {
 
-  // property declaration
+  /**
+   * Represent array of products
+   * @property {any} products 
+   */
   products : any[] = []
 
  /**
+  * @constructor
   * @param productService - The Product Service
   * @param Router  - Router
   */
@@ -32,7 +36,7 @@ export class IndexComponent {
   * 
   * fetches products data from the fakestore api 
   */
-    ngOnInit() {
+    ngOnInit():void {
       // call the helper function from product service to fetch products data
       this.productService.getProducts().subscribe({
         next: (data) => {
@@ -47,6 +51,7 @@ export class IndexComponent {
   }
 
   /**
+   * @method goToProductDetails
    * @description Helper function that redirect user to view product details
    * 
    * @param product 
