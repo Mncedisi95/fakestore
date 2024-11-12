@@ -69,7 +69,10 @@ h6{
 
 .select-box{
     height: 30px;
-    width: 160px;
+    width: 200px;
+    border: 1.5px solid #ddd;
+    margin: 5px 0 10px;
+    border-radius: 5px;
 }
 
 form{
@@ -79,7 +82,16 @@ form{
 }
 
 input{
-    height: 25px;
-    width: 200px;
+    height: 30px;
+    width: 220px;
     border-radius: 5px;
+    border: 1.5px solid #ddd;
+}
+
+input:focus{
+    color: #495057;
+    background-color: rgba(0, 0, 0, 0.01);
+    border-color: #b4add3;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(105, 90, 166, 0.25);
 }

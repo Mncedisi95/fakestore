@@ -14,7 +14,7 @@ input{
     height: 0;
     padding: 18px;
     font-size: 16px;
-    border: 1.5px solid #dedede;
+    border: 1.5px solid #ddd;
     margin-bottom: 10px;
     border-radius: 5px;
 }
@@ -27,11 +27,27 @@ textarea{
     font-size: 16px;
 }
 
+textarea:focus{
+    color: #495057;
+    background-color: rgba(0, 0, 0, 0.01);
+    border-color: #b4add3;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(105, 90, 166, 0.25);
+}
+
 label{
     font-family: "Baloo Paaji", cursive;
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+input:focus{
+    color: #495057;
+    background-color: rgba(0, 0, 0, 0.01);
+    border-color: #b4add3;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(105, 90, 166, 0.25);
 }
 
 small{
@@ -110,7 +126,7 @@ button{
 .unsuccess{
     text-align: center;
     margin-top: 15px;
-    background-color: 	#dc143c;
+    background-color:  #e0115f;
     -webkit-text-fill-color: #fff;
     font-weight: bold;
     font-size: 14px;

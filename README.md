@@ -1,27 +1,65 @@
-# Fakestore
+## Table of Content
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+- [introduction](#introduction)
+- [Features](#features)
+- [Technoligies and Software Tools](#technologies-and-software-tools)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Live Demo](#live-demo)
+- [Author](#author)
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Welcome to my fakestore app. A simple, yet powerful product management system built using angular 18.  
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Login functionality.
+* Add product functionality
+* Edit product functionality.
+* Delete Product functionality.
+* Fliter functionality.
+* Search Functionality.
 
-## Build
+## Technologies and Software Tools
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Front-End - HTML5, CSS 
+2. Back-End - TypeScript 
+3. Database - Fakestore API 
+4. Software tools - Visual Studio Code and GitHub.
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository: git clone https://github.com/Mncedisi95/fakestore
+2. Install dependencies: npm install.
+3. Start the development server: npm start.
+4. Build and Deploy: npm run build and npm run deploy.
+5. Switch to a specific branch: git checkout master
+6. Pull changes from remote repository: git pull master
+7. Run tests for the project: npm run test.
+8. Run linter checks for code quality: npm run link.
+9. Generate documentation for the project: npm run docs.
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Sign up for a free account.
+* Create your first todo list.
+* Start adding, updating, removing tasks and getting organized.
 
-## Further help
+## Screenshot
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![Sign-up Screen](src/assets/screenshot/)
+![Sign-in Screen](src/assets/screenshot/)
+![Home Screen](src/assets/screenshot/)
+![Todo Detail](src/assets/screenshot/)
+
+## Live Demo
+
+This Todo website is live at: 
+
+## Author
+
+* Name: Mncedisi Masondo
+* Email: mncedisimasondo4@gmail.com
+* Linkedin Profile: https://www.linkedin.com/in/mncedisi-masondo-9791b2189/ 

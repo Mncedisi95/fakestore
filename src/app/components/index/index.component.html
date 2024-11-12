@@ -4,13 +4,13 @@
     </div>
     <div class="product-container">
         <div class="product-list">
-            <form>
+            <form [formGroup]="fliterGroup">
                 <div>
-                    <input type="text" placeholder="search"/> 
+                    <input id="search" type="text" formControlName="search"  placeholder="Search..."/> 
                 </div>
-                <div>
+                <div style="margin-left:650px;">
                     <a>Fliter by Category:</a>
-                    <select class="select-box">
+                    <select id="category" formControlName="category" class="select-box">
                         <option value="" disabled selected>Select Category</option>
                         <option value="jewelery">Jewelery</option>
                         <option value="elelctronics">Electronics</option>

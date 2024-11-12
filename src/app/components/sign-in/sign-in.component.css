@@ -13,6 +13,14 @@ input{
     margin: 5px 0 10px;
 }
 
+input:focus{
+  color: #495057;
+  background-color: rgba(0, 0, 0, 0.01);
+  border-color: #b4add3;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(105, 90, 166, 0.25);
+}
+
 label{
     font-family: "Baloo Paaji", cursive;
     display: block;
@@ -50,7 +58,8 @@ button{
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    margin-top: 120px;
 }
 
 .form-control{
@@ -67,7 +76,7 @@ button{
 .unsuccess{
     text-align: center;
     margin-top: 15px;
-    background-color: 	#dc143c;
+    background-color:  #e0115f;
     -webkit-text-fill-color: #fff;
     font-weight: bold;
     font-size: 14px;

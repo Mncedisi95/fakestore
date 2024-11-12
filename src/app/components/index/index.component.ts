@@ -2,7 +2,7 @@ import { CurrencyPipe, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * @author Mncedisi Masondo
@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [NgFor,CurrencyPipe],
+  imports: [NgFor,CurrencyPipe,ReactiveFormsModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })

@@ -1,9 +1,9 @@
 <div class="container">
     <form [formGroup]="loginForm" class="form-control">
-        <h1>SignIn</h1>
+        <h2>SignIn</h2>
 
         <div>
-            <label>Email:</label>
+            <label>Username:</label>
             <input type="text" formControlName="username" placeholder="username"/>
             <div *ngIf="loginForm.get('username')?.touched">
                 <small *ngIf="loginForm.get('username')?.errors?.['required']">*Username is required</small>
