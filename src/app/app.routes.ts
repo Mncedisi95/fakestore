@@ -6,15 +6,16 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { UsersComponent } from './components/users/users.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
 
     {path:'login', component: SignInComponent},
-    {path:'index', component: IndexComponent},
-    {path:'productdetail', component: ProductDetailComponent},
-    {path:'addproduct', component: AddProductComponent},
-    {path:'editproduct', component: EditProductComponent},
-    {path:'users', component:UsersComponent},
+    {path:'index', component: IndexComponent, canActivate: [authGuard]},
+    {path:'productdetail/:id', component: ProductDetailComponent,canActivate: [authGuard]},
+    {path:'addproduct', component: AddProductComponent,canActivate: [authGuard]},
+    {path:'editproduct/:id', component: EditProductComponent,canActivate: [authGuard]},
+    {path:'users', component:UsersComponent,canActivate: [authGuard]},
     {path:'', redirectTo:'/login', pathMatch:'full'},
     {path:'**', component:PagenotfoundComponent}
 ];

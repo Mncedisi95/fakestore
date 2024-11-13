@@ -7,17 +7,18 @@
             <div style="margin: 10px;">
                 <p class="product-item"><strong>Category:</strong>{{product.category}}</p>
                 <p class="product-item"><strong>Price:</strong>{{product.price | currency}}</p>
-                <p class="product-item"><strong>Rate</strong></p>
+                <p class="product-item"><strong>Rate:</strong>{{product.rating.rate}}</p>
+                <p class="product-item"><strong>Count:</strong>{{product.rating.count}}</p>
             </div>
         </div>
         <p><strong>Product Description: </strong><span>{{product.description}}</span></p>
         <button (click)="editProduct()">Edit</button>
         <button (click)="removeProduct()">Remove</button>
         <div>
-            <input *ngIf="showSuccessMessage" type="text" class="success" placeholder="Product Removed Successfully."/>
+            <input *ngIf="showSuccessMessage" type="text" class="alert-success" placeholder="Product Removed Successfully."/>
         </div>
         <div>
-            <input *ngIf="showFailedMessage" type="text" class="unsuccess" placeholder="Product Failed To be Removed."/>
+            <input *ngIf="showFailedMessage" type="text" class="alert-danger" placeholder="Product Failed To be Removed."/>
         </div>
     </div>
 </div>

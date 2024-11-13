@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="loginForm" class="form-control">
+    <form [formGroup]="loginForm" (ngSubmit)="authenticate()" class="form-control">
         <h2>SignIn</h2>
 
         <div>
@@ -18,9 +18,9 @@
             </div>
         </div>
     
-        <button class="btn-primary" type="submit" (click)="authenticate()">Login</button>
+        <button class="btn-primary" type="submit">Login</button>
         <div>
-            <input *ngIf="showErrorMesage" class="unsuccess" placeholder="Incorrect Password or Email"/>
+            <input *ngIf="showErrorMesage" class="alert-danger" placeholder="Incorrect Password or Username."/>
         </div>
     </form>
 </div>

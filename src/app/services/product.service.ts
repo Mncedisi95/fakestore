@@ -13,17 +13,20 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class ProductService {
 
-  // property declaration
+  /**
+   * respresent api url
+   * @property {string} apiurl
+   */
   private apiurl = 'https://fakestoreapi.com/products'
 
   /**
+   * @constructor
    * @param httpClient 
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * @description helper function that get the list of products from fakestore api
-   * 
    * @returns list of products
    */
   getProducts(): Observable<any>{
@@ -32,10 +35,9 @@ export class ProductService {
   }
 
   /**
+   * @method getProductByID
    * @description Helper function that get product using product ID 
-   * 
    * @param productId - Product ID
-   * 
    * @returns -The product  
    */
   getProductByID(productId: number): Observable<any>{
@@ -44,10 +46,9 @@ export class ProductService {
   }
 
   /**
+   * @method addproduct
    * @description Helper function that add new product on fakestore api
-   * 
    * @param product - New Product
-   * 
    * @returns - new added product with new product ID 
    */
   addProduct(product:any): Observable<any>{
@@ -62,11 +63,10 @@ export class ProductService {
   }
 
   /**
+   * @method updateProduct
    * @description - Helper function that update requested product 
-   * 
    * @param productId  - Product ID
    * @param data  - Updated Information
-   * 
    * @returns updated product with the sent product ID
    */
   updateProduct(productId: number,data:any):Observable<any>{
@@ -75,10 +75,9 @@ export class ProductService {
   }
 
   /**
+   * @method removeProduct
    * @description Helper function that remove product from fakestore api
-   * 
    * @param productId - product ID
-   * 
    * @returns deleted  product from faketore api
    */
   removeProduct(productId: number): Observable<any>{
@@ -88,7 +87,7 @@ export class ProductService {
 
   /**
    * @method getJeweleries
-   * @description helper function that get all products under juwelery category
+   * @description helper function that get all products under jewelery category
    * @returns {products} list of products under jewelery category
    */
   getJeweleries(): Observable<any>{
@@ -113,7 +112,7 @@ export class ProductService {
    */
   getMenClothing(): Observable<any>{
     // send HTTP GET request 
-    return this.httpClient.get<any>(this.apiurl + '/category/mens clothings')
+    return this.httpClient.get<any>(this.apiurl + "/category/men's clothings")
   }
 
   /**
@@ -123,7 +122,7 @@ export class ProductService {
    */
   getWomenClothing(): Observable<any>{
     // send HTTP GET request
-    return this.httpClient.get<any>(this.apiurl + '/category/womens clothing')
+    return this.httpClient.get<any>(this.apiurl + "/category/women's clothing")
   }
  
 }

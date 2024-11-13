@@ -75,7 +75,7 @@ export class ProductDetailComponent {
    */
    editProduct():void{
     // navigate to edit product component/page
-    this.router.navigate(['/editproduct', this.productId])
+    this.router.navigate(['/editproduct', this.product.id])
   }
 
   /**
@@ -87,13 +87,12 @@ export class ProductDetailComponent {
   this.productService.removeProduct(this.productId).subscribe({
     next: response => {
       console.log(response);
-      
        // show success message
       this.showSuccessMessage = true
       // set timeout to navigate to products component after product has been removed successfully 
       setTimeout(() => {
         // navigate to products component
-        this.router.navigate(['/products'])
+        this.router.navigate(['/index'])
       },2000)
     },
     error: error => {

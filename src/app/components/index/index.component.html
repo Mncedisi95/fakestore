@@ -4,11 +4,11 @@
     </div>
     <div class="product-container">
         <div class="product-list">
-            <form [formGroup]="fliterGroup">
+            <form>
                 <div>
-                    <input id="search" type="text" formControlName="search"  placeholder="Search..."/> 
+                    <input id="search" type="text" placeholder="Search..."/> 
                 </div>
-                <div style="margin-left:650px;">
+                <div style="margin-left:630px;">
                     <a>Fliter by Category:</a>
                     <select id="category" formControlName="category" class="select-box">
                         <option value="" disabled selected>Select Category</option>
@@ -25,6 +25,7 @@
                     <img [src]="product.image"/>
                 </div>
                 <h5>{{product.title}}</h5>
+                <h6>{{product.rating.rate}}</h6>
                 <h6>{{product.price | currency}}</h6>
             </div>
         </div>

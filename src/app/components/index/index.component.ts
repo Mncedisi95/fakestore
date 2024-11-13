@@ -2,7 +2,7 @@ import { CurrencyPipe, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder,  ReactiveFormsModule } from '@angular/forms';
 
 /**
  * @author Mncedisi Masondo
@@ -25,24 +25,14 @@ export class IndexComponent {
    */
   products : any[] = []
 
-  /**
-   * represent form group
-   * @property {FormGroup} fliterGroup
-   */
-  fliterGroup : FormGroup
 
  /**
   * @constructor
   * @param productService - The Product Service
   * @param Router  - Router
-  * @param formBuilder
+  * @param formBuilder - form builder
   */
-  constructor(private productService:ProductService,private router: Router,private formBuilder:FormBuilder) {
-    // Initialization of fliter form
-    this.fliterGroup = this.formBuilder.group({
-
-    })
-  }
+  constructor(private productService:ProductService,private router: Router) {}
 
  /**
   * @description initializes the component after angular fist display the data-bound properties

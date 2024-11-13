@@ -99,11 +99,19 @@ button{
     border-radius: 5px;
 }
 
-.unsuccess{
+.alert-danger{
     text-align: center;
-    margin-top: 15px;
-    background-color: 	#dc143c;
-    -webkit-text-fill-color: #fff;
-    font-weight: bold;
-    font-size: 14px;
+    margin-top: 10px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color:#ebccd1;
+    border-radius: 0.2857rem;
+}
+
+.alert-success{
+    margin-top: 10px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    border-radius: 0.2857rem
 }

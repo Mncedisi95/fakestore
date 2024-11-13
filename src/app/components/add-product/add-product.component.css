@@ -126,8 +126,9 @@ button{
 .unsuccess{
     text-align: center;
     margin-top: 15px;
-    background-color:  #e0115f;
-    -webkit-text-fill-color: #fff;
     font-weight: bold;
     font-size: 14px;
+    color: #fff;
+    background-color: #f2dede;
+    border-color: #ebccd1;
 }

@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 /**
  * @author Mncedisi Masondo
@@ -35,7 +36,7 @@ export class SignInComponent {
    * @param formBuilder
    * @param authService 
    */
-  constructor(private formBuilder:FormBuilder, private authService:AuthService){
+  constructor(private formBuilder:FormBuilder, private authService:AuthService, private router: Router){
     // Initialization of login form
     this.loginForm = this.formBuilder.group({
       //declaration of properties -- username and password
@@ -57,7 +58,20 @@ export class SignInComponent {
     const password = this.loginForm.get('password')?.value
 
     // call the helper function from the auth service to authenticate user
-    this.authService.authenticate(username,password).subscribe(data => {
+    this.authService.authenticate(username,password).subscribe({
+      next: user => {
+        // navigate to product dashboard
+        this.router.navigate(['/index'])
+      },
+      error: error => {
+        // show error message
+        this.showErrorMesage = true
+        // time out error message
+        setTimeout(() =>{
+          // hide error 
+          this.showErrorMesage = false;
+        },3000)
+      }
     }) 
   }
 

@@ -46,6 +46,7 @@ export class AuthService {
       map(userdata => {
         // set the current user
         this.setCurrentUser(userdata)
+        this.currentUserSubject.next(userdata)
         return userdata
       }),
       catchError((error: HttpErrorResponse) => {

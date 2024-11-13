@@ -72,7 +72,7 @@ export class AddProductComponent {
           this.productForm.reset()
           // display message
           this.showSuccessMessage = true
-          // hide message
+          // timeout error message
           setTimeout(() => {
             // hide message
             this.showSuccessMessage = false
