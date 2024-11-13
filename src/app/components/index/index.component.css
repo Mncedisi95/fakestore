@@ -75,6 +75,21 @@ h6{
     border-radius: 5px;
 }
 
+button{
+    width: 65px;
+    height: 35px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 1.5px solid #ddd;
+    color: #fff;
+    background-color: #BA55D3;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #DA70D6;
+}
+
 form{
     display: flex;
     margin: 5px;
@@ -94,4 +109,11 @@ input:focus{
     border-color: #b4add3;
     outline: 0;
     box-shadow: 0 0 0 0.1rem rgba(105, 90, 166, 0.25);
+}
+
+mat-paginator{
+    background-color:  #695aa6;
+    color: #fff;
+    width: 1180px;
+    margin-left: 75px;
 }

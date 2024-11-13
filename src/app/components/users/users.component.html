@@ -4,7 +4,7 @@
     </div>
     <div class="user-container">
         <div class="user-list">
-            <div class="user-card" *ngFor="let user of users">
+            <div class="user-card" *ngFor="let user of (users | slice: lowIndex : highIndex)">
                 <p><strong>Name and Surname:</strong>{{user.name['firstname']}}  {{user.name['lastname']}}</p>
                 <p><strong>Username:</strong>{{user.username}}</p>
                 <p><strong>Email:</strong>{{user.email}}</p>
@@ -13,5 +13,7 @@
             </div>
         </div>
     </div>
+    <mat-paginator [length]= items [pageSize]="8" [showFirstLastButtons]="true" [pageIndex]="currentpage" [pageSizeOptions]="[8, 12, 16, 20]" (page)="handlePagenator($event)" aria-label="Select page">
+    </mat-paginator>
 </section>
 

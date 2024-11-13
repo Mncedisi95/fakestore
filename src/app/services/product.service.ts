@@ -112,7 +112,7 @@ export class ProductService {
    */
   getMenClothing(): Observable<any>{
     // send HTTP GET request 
-    return this.httpClient.get<any>(this.apiurl + "/category/men's clothings")
+    return this.httpClient.get<any>(this.apiurl + "/category/men's clothing")
   }
 
   /**

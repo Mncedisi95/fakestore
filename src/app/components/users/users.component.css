@@ -64,3 +64,11 @@ button{
 button:hover{
     background-color: #DA70D6;
 }
+
+
+mat-paginator{
+    background-color:  #695aa6;
+    color: #fff;
+    width: 1180px;
+    margin-left: 75px;
+}
