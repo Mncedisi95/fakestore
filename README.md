@@ -50,9 +50,9 @@ Welcome to my fakestore e-commerce admin dashboard app. A simple, yet powerful p
 
 ## Screenshot
 
-![Sign-in Screen](src/assets/screenshot/sign-in.png)
-![Home Screen](src/assets/screenshot/home.png)
-![Add Product Screen](src/assets/screenshot/add-product)
+![Sign-in Screen](src/assests/screenshots/sign-in.png)
+![Home Screen](src/assests/screenshots/home.png)
+![Add Product Screen](src/assests/screenshots/add-product.png)
 ![View Product Screen](src/assests/screenshots/productdetail.png)
 ![Edit Product Screen](src/assests/screenshots/edit-product.png)
 ![Users](src/assests/screenshots/user.png)
