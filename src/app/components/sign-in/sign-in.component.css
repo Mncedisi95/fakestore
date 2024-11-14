@@ -4,6 +4,14 @@ h2{
     font-size: 2.2rem;
 }
 
+h6{
+    font-family: "Baloo Paaji", cursive;
+    text-align: center;
+    color:  #695aa6; ;
+    font-weight: 500;
+    font-size: 18px;
+}
+
 input{
     width: 300px;
     height: 5px;

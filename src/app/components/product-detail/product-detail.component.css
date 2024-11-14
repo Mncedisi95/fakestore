@@ -75,7 +75,7 @@ button:hover{
 }
 
 .product-detail img{
-    max-width: 200px;
+    width: 300px;
     margin-bottom: 20px;
     height: 320px;
 }

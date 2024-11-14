@@ -3,17 +3,28 @@
         <h2 class="section-title">User Management</h2>
     </div>
     <div class="user-container">
-        <div class="user-list">
-            <div class="user-card" *ngFor="let user of (users | slice: lowIndex : highIndex)">
-                <p><strong>Name and Surname:</strong>{{user.name['firstname']}}  {{user.name['lastname']}}</p>
-                <p><strong>Username:</strong>{{user.username}}</p>
-                <p><strong>Email:</strong>{{user.email}}</p>
-                <button>Edit</button>
-                <button>Remove</button>
-            </div>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Display Name</th>
+                        <th>E-mail</th>
+                        <th>City</th>
+                        <th>View Details</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of (users  | slice: lowIndex : highIndex)">
+                    <tr>
+                        <td>{{user.username}}</td>
+                        <td>{{user.name.firstname + ' ' + user.name.lastname}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.address.city}}</td>
+                        <td><button class="btn">view</button></td>
+                    </tr>   
+                </tbody>
+            </table>
         </div>
-    </div>
-    <mat-paginator [length]= items [pageSize]="8" [showFirstLastButtons]="true" [pageIndex]="currentpage" [pageSizeOptions]="[8, 12, 16, 20]" (page)="handlePagenator($event)" aria-label="Select page">
+    <mat-paginator [length]= items [pageSize]="7" [showFirstLastButtons]="true" [pageIndex]="currentpage" [pageSizeOptions]="[7, 14, 21, 28]" (page)="handlePagenator($event)" aria-label="Select page">
     </mat-paginator>
 </section>
 

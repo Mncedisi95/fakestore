@@ -24,47 +24,58 @@ h2 {
     overflow-y: auto;
 }
 
-.user-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 26px;
-    margin: 10px;
-    align-content: center;
-    justify-content: center;
+.content-table{
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 0.9em;
+    min-width: 900px;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: 200px;
 }
 
-.user-card{
-    border: 1px solid #ddd;
-    background-color: #f3f2ee;
-    height: auto;
-    width: 250px;
-    align-items: center;
-    justify-content: center;
+.content-table thead tr{
+    background-color:  #BA55D3;
+    color: #fff;
     text-align: left;
-    padding: 10px;
-    cursor: pointer;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid;
+}
+
+.content-table tbody td{
+    text-align: left;
+}
+
+.content-table tbody tr:nth-of-type(even){
+    background-color:  #F5F5F5;
 }
 
 button{
-    margin: 15px;
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #fff;
-    font-weight: bold;
+    width: 55px;
+    height: 25px;
     background-color: #BA55D3;
+    color: #fff;
+    border-radius: 5px;
     border: none;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
     cursor: pointer;
+    font-size: 15px;
 }
 
 button:hover{
     background-color: #DA70D6;
 }
-
 
 mat-paginator{
     background-color:  #695aa6;

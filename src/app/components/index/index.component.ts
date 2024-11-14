@@ -42,6 +42,8 @@ export class IndexComponent {
    */
   items : number = 0
 
+  arr: any[] = []
+
   /**
   * represents page items
    * @property {number} currentpage

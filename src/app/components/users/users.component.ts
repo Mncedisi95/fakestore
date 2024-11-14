@@ -42,7 +42,7 @@ export class UsersComponent {
    * @property {number} high - represent high index of a page
    */
   lowIndex : number = 0
-  highIndex : number = 8 
+  highIndex : number = 7 
 
   /**
   * @constructor
@@ -52,7 +52,7 @@ export class UsersComponent {
   
   /**
   * @description initializes the component after angular fist display the data-bound properties
-  * Fetches products data from the fakestore api 
+  * Fetches user data from the fakestore api 
   */
   ngOnInit(): void{
     // call the helper function from user service to fetch all users from fakestore api
