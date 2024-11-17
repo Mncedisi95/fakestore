@@ -59,7 +59,7 @@ Welcome to my fakestore e-commerce admin dashboard app. A simple, yet powerful p
 
 ## Live Demo
 
-This Todo website is live at: [https://mncedisi95.github.io/fakestore]
+This Todo website is live at: [https://mncedisi95.github.io/fakestore/]
 
 ## Author
 
