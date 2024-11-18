@@ -7,6 +7,7 @@ import { UsersComponent } from './components/users/users.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { authGuard } from './guards/auth.guard';
+import { CartComponent } from './components/cart/cart.component';
 
 export const routes: Routes = [
 
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path:'addproduct', component: AddProductComponent,canActivate: [authGuard]},
     {path:'editproduct/:id', component: EditProductComponent,canActivate: [authGuard]},
     {path:'users', component:UsersComponent,canActivate: [authGuard]},
+    {path:'carts', component:CartComponent, canActivate:[authGuard]},
     {path:'', redirectTo:'/login', pathMatch:'full'},
     {path:'**', component:PagenotfoundComponent}
 ];

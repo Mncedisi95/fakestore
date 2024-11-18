@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 
 /**
+ * Welcome to product.service.ts
  * @author Mncedisi Masondo
- * 
- * @description Service Responsible for fecting all products from fakestore api
+ * @description - Service Responsible for fecting all products from fakestore api
  */
 
 @Injectable({
@@ -21,13 +21,14 @@ export class ProductService {
 
   /**
    * @constructor
-   * @param httpClient 
+   * @param {HttpClient} httpClient 
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
-   * @description helper function that get the list of products from fakestore api
-   * @returns list of products
+   * @method getProducts
+   * @description - helper function that get the list of products from fakestore api
+   * @returns {products} - list of products
    */
   getProducts(): Observable<any>{
     // send HTTP GET request
@@ -37,8 +38,8 @@ export class ProductService {
   /**
    * @method getProductByID
    * @description Helper function that get product using product ID 
-   * @param productId - Product ID
-   * @returns -The product  
+   * @param {number} productId - Product ID
+   * @returns {product} - The product  
    */
   getProductByID(productId: number): Observable<any>{
     // Send HTTP GET request with ID
@@ -48,7 +49,7 @@ export class ProductService {
   /**
    * @method addproduct
    * @description Helper function that add new product on fakestore api
-   * @param product - New Product
+   * @param {any} product - New Product
    * @returns - new added product with new product ID 
    */
   addProduct(product:any): Observable<any>{
@@ -65,8 +66,8 @@ export class ProductService {
   /**
    * @method updateProduct
    * @description - Helper function that update requested product 
-   * @param productId  - Product ID
-   * @param data  - Updated Information
+   * @param {number} productId  - Product ID
+   * @param {any} data  - Updated Information
    * @returns updated product with the sent product ID
    */
   updateProduct(productId: number,data:any):Observable<any>{
@@ -77,8 +78,8 @@ export class ProductService {
   /**
    * @method removeProduct
    * @description Helper function that remove product from fakestore api
-   * @param productId - product ID
-   * @returns deleted  product from faketore api
+   * @param {number} productId - product ID
+   * @returns {product} - deleted  product from faketore api
    */
   removeProduct(productId: number): Observable<any>{
     // Send HTTP DELETE request
@@ -106,7 +107,7 @@ export class ProductService {
   }
 
   /**
-   * @method
+   * @method getMenClothing
    * @description helper function that get list of products under men's clothing category
    * @returns {products} - The list of products under men's category
    */
