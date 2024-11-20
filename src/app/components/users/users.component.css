@@ -101,3 +101,34 @@ mat-paginator{
     }
     
 }
+
+@media  screen and (max-width: 736px) {
+
+    h2{
+        font-size: 18px;
+    }
+
+    .content-table{
+        min-width: 600px;
+        margin-left: 50px;
+    }
+
+    .content-table th, 
+    .content-table tr{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    mat-paginator{
+        width: 650px;
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    button{
+        width: 45px;
+        height: 20px;
+        font-size: 12px;
+    }
+    
+}

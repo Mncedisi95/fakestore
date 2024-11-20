@@ -103,3 +103,20 @@ button:hover{
     cursor: pointer;
 }
   
+@media screen and (max-width: 736px){
+
+    .logo{
+        font-size: 15px;
+    }
+
+    .nav-link{
+        font-size: 12px;
+    }
+
+    button{
+        height: 28px;
+        width: 60px;
+        font-size: 12px;
+    }
+
+}

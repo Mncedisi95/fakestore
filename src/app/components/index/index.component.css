@@ -131,11 +131,7 @@ mat-paginator{
         font-size: 20px;
     }
 
-    h5{
-        font-size: 12px;
-    }
-
-    h6{
+    h5,h6{
         font-size: 12px;
     }
 
@@ -174,4 +170,64 @@ mat-paginator{
         margin-left: 450px;
     }
 
+}
+
+@media screen and (max-width: 736px) {
+ 
+    h2{
+        font-size: 18px;
+    }
+
+    h5,h6{
+        font-size: 8px;
+    }
+
+    .section{
+        padding: 70px 0;
+        margin-left: 5px;
+    }
+
+    .product-card{
+        width: 120px;
+    }
+
+    .product-card img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .select-box{
+        width: 130px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    a{
+        font-size: 10px;
+    }
+
+    .right{
+        margin-left: 150px;
+    }
+
+    .left{
+        margin-left: 10px;
+    }
+
+    mat-paginator{
+        width: 700px;
+        margin-left: 10px;
+        font-size: 10px;
+    }
+
+    input{
+        width: 130px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    button{
+        height: 27px;
+        font-size: 10px;
+    }
 }

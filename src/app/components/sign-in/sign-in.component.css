@@ -99,3 +99,56 @@ button{
    }
     
 }
+
+@media  screen and (max-width: 736px) {
+
+    .container{
+        padding: .5px 0;
+    }
+
+    h2{
+        font-size: 1rem;
+    }
+
+    h6{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    
+    input{
+        height: .5px;
+        font-size: 10px;
+        width: 250px;
+    }
+
+    label{
+        font-size: 10px;
+    }
+
+    button{
+        font-size: 10px;
+        width: 290px;
+    }
+
+    .form-control{
+        max-height: 350px;
+        max-width: 600px;
+    }
+
+    small{
+        font-size: 10px;
+    }
+
+    .alert-danger{
+        font-size: 10px;
+    }
+    
+}
+
+@media  screen and (max-width: 414px) {
+
+    .container{
+        padding: 150px 0;
+    }
+    
+}
