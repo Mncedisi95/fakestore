@@ -32,7 +32,7 @@ h2 {
     border-radius: 7px 7px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-left: 200px;
+    margin-left: 250px;
 }
 
 .content-table thead tr{
@@ -82,4 +82,22 @@ mat-paginator{
     color: #fff;
     width: 1180px;
     margin-left: 75px;
+}
+
+@media  screen and (max-width: 1024px) {
+
+    h2{
+        font-size: 20px;
+    }
+
+    .content-table{
+        margin-left: 30px;
+        max-width: 700px;
+    }
+
+    mat-paginator{
+        width: 920px;
+        margin-left: 20px;
+    }
+    
 }

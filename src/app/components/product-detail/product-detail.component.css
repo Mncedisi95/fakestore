@@ -58,7 +58,8 @@ button:hover{
     justify-content: center;
     height: 100vh;
     flex-direction: column;
-    margin-top: 50px;
+    padding: 50px 0;
+
 }
 
 .product-detail{
@@ -100,4 +101,28 @@ button:hover{
     background-color: #f2dede;
     border-color:#ebccd1;
     border-radius: 0.2857rem;
+}
+
+@media  screen and (max-width: 1024px) {
+    
+    h2{
+        font-size: 23px;
+    }
+
+    h4{
+        font-size: 14px;
+    }
+    
+    p{
+        font-size: 14px;
+    }
+
+    .product-detail{
+        max-height: 500px;
+    }
+
+    .product-detail img{
+        width: 200px;
+        height: 250px;
+    }  
 }

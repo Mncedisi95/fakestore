@@ -132,3 +132,32 @@ button{
     border-color:#ebccd1;
     border-radius: 0.2857rem;
 }
+
+@media screen and (max-width: 1024px) {
+
+    .form-control{
+        max-height: 550px;
+    }
+
+    textarea{
+        height: 110px;
+    }
+
+    input{
+        height: 3px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    label{
+        font-size: 13px;
+    }
+
+    button{
+        font-size: 12px;
+    }
+
+    
+}

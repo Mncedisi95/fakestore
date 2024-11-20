@@ -21,7 +21,7 @@ h6{
 }
 
 .section{
-    padding: 70px 10px;
+    padding: 70px 15px;
 }
 
 .section-title{
@@ -32,7 +32,7 @@ h6{
 
 .product-container{
     display: flex;
-    overflow-y: auto;
+    height: auto;
 }
 
 .product-list{
@@ -40,7 +40,6 @@ h6{
     flex-wrap: wrap;
     gap: 30px;
     padding: 26px;
-    margin: 10px;
     align-content: center;
     justify-content: center;
 }
@@ -73,6 +72,14 @@ h6{
     border: 1.5px solid #ddd;
     margin: 5px 0 10px;
     border-radius: 5px;
+}
+
+.right{
+    margin-left:520px;
+}
+
+.left{
+    margin-left: 20px;
 }
 
 button{
@@ -116,4 +123,55 @@ mat-paginator{
     color: #fff;
     width: 1180px;
     margin-left: 75px;
+}
+
+@media screen  and (max-width: 1024px) {
+
+    h2{
+        font-size: 20px;
+    }
+
+    h5{
+        font-size: 12px;
+    }
+
+    h6{
+        font-size: 12px;
+    }
+
+    .section{
+        padding: 70px 0;
+        margin-left: 5px;
+    }
+
+    .product-card{
+        width: 180px;
+    }
+
+    .product-card img{
+        width: 100px;
+        height: 100px;
+    }
+
+    input{
+        width: 180px;
+    }
+
+    .select-box{
+        width: 180px;
+    }
+
+    a{
+        font-size: 12px;
+    }
+
+    mat-paginator{
+        width: 900px;
+        margin-left: 48px;
+    }
+
+    .right{
+        margin-left: 450px;
+    }
+
 }

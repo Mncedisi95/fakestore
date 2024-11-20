@@ -6,12 +6,12 @@
         <div class="product-list">
             <form>
                 <div>
-                    <input id="search" type="text" placeholder="Search.." style="margin-left: 20px;"/>  
+                    <input id="search" type="text" placeholder="Search.." class="left"/>  
                 </div>
                 <div>
                     <button>Search</button>
                 </div>
-                <div style="margin-left:520px;">
+                <div class="right">
                     <a>Fliter by Category:</a>
                     <select id="category" [(ngModel)]="category" (ngModelChange)="fliterCategory($event)"  [ngModelOptions]="{standalone: true}" class="select-box">
                         <option value="" disabled selected>Select Category</option>
