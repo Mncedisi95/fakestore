@@ -125,57 +125,55 @@ mat-paginator{
     margin-left: 75px;
 }
 
-@media screen  and (max-width: 1024px) {
+/* Small Device = 320px */
 
-    h2{
-        font-size: 20px;
-    }
-
-    h5,h6{
-        font-size: 12px;
-    }
-
-    .section{
-        padding: 70px 0;
-        margin-left: 5px;
-    }
+@media only screen and (max-width: 479px){
 
     .product-card{
-        width: 180px;
+        width: 100px;
     }
 
     .product-card img{
-        width: 100px;
-        height: 100px;
-    }
-
-    input{
-        width: 180px;
-    }
-
-    .select-box{
-        width: 180px;
-    }
-
-    a{
-        font-size: 12px;
+        width: 50px;
+        height: 50px;
     }
 
     mat-paginator{
-        width: 900px;
-        margin-left: 48px;
+        width: 320px;
+        font-size: 10px;
+        margin-left: 30px;
     }
 
     .right{
-        margin-left: 450px;
+        margin-left: 70px;
     }
 
-}
+    .left{
+        margin-left: 5px;
+    }
 
-@media screen and (max-width: 736px) {
- 
+    input{
+        width: 50px;
+        height: 15px;
+    }
+
+    button{
+        font-size: 10px;
+        height: 20px
+    }
+
+    .select-box{
+        width: 100px;
+        height: 20px;
+        font-size: 8px;
+    }
+
+    a{
+        font-size: 10px;
+    }
+
     h2{
-        font-size: 18px;
+        font-size: 15px;
     }
 
     h5,h6{
@@ -183,51 +181,9 @@ mat-paginator{
     }
 
     .section{
-        padding: 70px 0;
-        margin-left: 5px;
+        padding: 90px 0;
     }
 
-    .product-card{
-        width: 120px;
-    }
 
-    .product-card img{
-        width: 80px;
-        height: 80px;
-    }
-
-    .select-box{
-        width: 130px;
-        height: 25px;
-        font-size: 10px;
-    }
-
-    a{
-        font-size: 10px;
-    }
-
-    .right{
-        margin-left: 150px;
-    }
-
-    .left{
-        margin-left: 10px;
-    }
-
-    mat-paginator{
-        width: 700px;
-        margin-left: 10px;
-        font-size: 10px;
-    }
-
-    input{
-        width: 130px;
-        height: 25px;
-        font-size: 10px;
-    }
-
-    button{
-        height: 27px;
-        font-size: 10px;
-    }
 }
+

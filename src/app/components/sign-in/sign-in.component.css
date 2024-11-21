@@ -92,18 +92,12 @@ button{
 }
 
 
-@media screen and (max-width: 1024px)  {
-    
-   h2{
-    font-size: 1.8rem;
-   }
-    
-}
+/* Small Device = 320px */
 
-@media  screen and (max-width: 736px) {
+@media only screen and (max-width: 480px) and (orientation: portrait) {
 
     .container{
-        padding: .5px 0;
+        padding: 80px 0;
     }
 
     h2{
@@ -131,7 +125,6 @@ button{
     }
 
     .form-control{
-        max-height: 350px;
         max-width: 600px;
     }
 
@@ -142,13 +135,9 @@ button{
     .alert-danger{
         font-size: 10px;
     }
-    
 }
 
-@media  screen and (max-width: 414px) {
+/* Wide Mobile = 480px */
 
-    .container{
-        padding: 150px 0;
-    }
-    
-}
+
+/* Tablet Device = 768px */

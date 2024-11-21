@@ -132,3 +132,20 @@ mat-paginator{
     }
     
 }
+
+/* Small Device = 320px */
+
+@media only screen and (max-width: 479px){
+
+    .section{
+        padding: 100px 0;
+    }
+
+    mat-paginator{
+        width: 320px;
+        font-size: 10px;
+        margin-left: 30px;
+    }
+}
+
+

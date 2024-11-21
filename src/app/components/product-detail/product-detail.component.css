@@ -57,9 +57,7 @@ button:hover{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 50px 0;
-    margin-top: 50px;
-
+    padding: 70px 0;
 }
 
 .product-detail{
@@ -71,7 +69,6 @@ button:hover{
     margin: 0 auto;
     background-color: #f3f2ee;
     border-radius: 8px;
-    overflow-y: auto;
 }
 
 .product-detail img{
@@ -102,34 +99,12 @@ button:hover{
     border-radius: 0.2857rem;
 }
 
-@media  screen and (max-width: 1024px) {
-    
-    h2{
-        font-size: 23px;
-    }
+/* Small Device = 320px */
 
-    h4{
-        font-size: 14px;
-    }
-    
-    p{
-        font-size: 14px;
-    }
-
-    .product-detail{
-        max-height: 500px;
-    }
-
-    .product-detail img{
-        width: 200px;
-        height: 250px;
-    }  
-}
-
-@media screen and (max-width: 736px){
+@media only screen and (max-width: 480px){
 
     h2{
-        font-size: 18px;
+        font-size: 13px;
     }
 
     h4{
@@ -142,14 +117,14 @@ button:hover{
 
     .product-detail{
         max-height: 500px;
-        max-width: 600px;
+        max-width: 300px;
         margin-top: 10px;
     }
 
     .product-detail img{
         width: 100px;
-        margin-bottom: 10px;
         height: 120px;
+        margin-bottom: 10px;
     }
 
     .product-item{
@@ -157,14 +132,13 @@ button:hover{
     }
 
     button{
+        height: 30px;
         width: 60px;
-        height: 25px;
         font-size: 12px;
     }
 
-    input{
-        font-size: 12px;
-        width: 250px;
+    .container{
+        padding: 90px 0;
     }
 
 }

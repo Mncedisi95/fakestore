@@ -132,65 +132,48 @@ button{
     border-radius: 0.2857rem;
 }
 
-@media screen and (max-width: 1024px) {
+/* Small Device = 320px */
 
-    .form-control{
-        max-height: 550px;
+@media only screen and (max-width: 479px) {
+
+    h2{
+        font-size: 13px;
     }
 
-    textarea{
-        height: 110px;
+    label{
+        font-size: 10px;
+    }
+
+    button{
+        font-size: 10px;
+        width: 280px;
     }
 
     input{
         height: 30px;
-    }
-
-    h2{
-        font-size: 20px;
-    }
-
-    label{
-        font-size: 13px;
-    }
-
-    button{
-        font-size: 12px;
-    }
-    
-}
-
-@media screen and (max-width: 736px){
-
-    h2{
-        font-size: 18px;
-    }
-
-    label{
         font-size: 10px;
-    }
-
-    button{
-        font-size: 10px;
-    }
-
-    input{
-        height: 25px;
-        font-size: 10px;
+        width: 270px;
     }
 
     .select-box{
         font-size: 10px;
         height: 30px;
+        width: 275px;
     }
 
     textarea{
-        height: 90px;
+        height: 70px;
         font-size: 10px;
+        width: 270px;
     }
 
     small{
         font-size: 10px;
     }
 
+    .section{
+        padding: 90px 0;
+    } 
 }
+
+
