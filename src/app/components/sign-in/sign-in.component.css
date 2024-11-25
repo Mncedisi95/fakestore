@@ -94,7 +94,7 @@ button{
 
 /* Small Device = 320px */
 
-@media only screen and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (max-width: 479px) and (orientation: portrait) {
 
     .container{
         padding: 80px 0;
@@ -140,4 +140,4 @@ button{
 /* Wide Mobile = 480px */
 
 
-/* Tablet Device = 768px */
+
