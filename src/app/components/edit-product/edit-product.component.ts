@@ -61,6 +61,11 @@ export class EditProductComponent {
   description : string = ''
 
   /**
+   * @property {boolean} isEditMode
+   */
+  isEditMode : boolean = false
+
+  /**
   * @property {boolean} showSuccessMessage  - represent success message
   * @property {boolean} showErrorMessage - represent error message
   */
@@ -81,30 +86,35 @@ export class EditProductComponent {
    *  Fetch product data from the fakestore api 
    * 
    */
-  ngOnInit():void{
+  ngOnInit(): void {
     // Get passed product ID
     this.activatedRoute.params.subscribe(params => {
       // Initialize product id property with the passed ID
-      this.productId = +params['id']      
+      this.productId = +params['id']
     })
 
-    // load the current product -- call the helper function from product service to get product using a product id
-    this.productService.getProductByID(this.productId).subscribe({
-      next: data => {
-        // after matching product id, initialize product property
-        this.product = data
-        // initialize all properties
-        this.title = this.product.title
-        this.category = this.product.category
-        this.description = this.product.description
-        this.price = this.product.price
-        this.image = this.product.image
-      },
-      error : error =>{
-        console.log(error)
-      }
-    })
+    if (this.productId) {
+      // set editable mode
+      this.isEditMode = true
 
+      // load the current product -- call the helper function from product service to get product using a product id
+      this.productService.getProductByID(this.productId).subscribe({
+        next: data => {
+          // after matching product id, initialize product property
+          this.product = data
+          // initialize all properties
+          this.title = this.product.title
+          this.category = this.product.category
+          this.description = this.product.description
+          this.price = this.product.price
+          this.image = this.product.image
+        },
+        error: error => {
+          console.log(error)
+        }
+      })
+
+    }
   }
 
   /**
@@ -170,29 +180,35 @@ export class EditProductComponent {
       image: this.image,
       category: this.category
     }
-    // call the helper function from product service to edit the product
-    this.productService.updateProduct(this.productId, product).subscribe({
-      next: data => {
-        console.log(data)
-        // display success message
-        this.showSuccessMassage = true
-        // set timeout and direct products dashboard
-        setTimeout(() => {
-          // navigate to index component
-          this.router.navigate(['/index'])
-        },3000)
-      },
-      error: error => {
-        console.log(error);
-        // show error message
-        this.showErrorMessage = true
-        // set timeout
-        setTimeout(() => {
-          // hide error message
-          this.showErrorMessage = false
-        },3000)
-      }
-    })
+
+    if (this.isEditMode) {
+      // call the helper function from product service to edit the product
+      this.productService.updateProduct(this.productId, product).subscribe({
+        next: data => {
+          console.log(data)
+          // display success message
+          this.showSuccessMassage = true
+          // set timeout and direct products dashboard
+          setTimeout(() => {
+            // navigate to index component
+            this.router.navigate(['/index'])
+          }, 3000)
+        },
+        error: error => {
+          console.log(error);
+          // show error message
+          this.showErrorMessage = true
+          // set timeout
+          setTimeout(() => {
+            // hide error message
+            this.showErrorMessage = false
+          }, 3000)
+        }
+      })
+    }
+    else {
+      // navigate to add product
+    }
   }
 
 }

@@ -1,29 +1,30 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn, Router, UrlTree } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
-export const authGuard: CanActivateFn = (route, state) => {
+/**
+ * Authentication guard to protect routes from unauthorized access.
+ * @param route - The activated route snapshot.
+ * @param state - The router state snapshot.
+ * @returns {boolean | UrlTree} true if the user is authenticated, otherwise a navigation command to the login page.
+ */
+export const authGuard: CanActivateFn = (route, state) : boolean | UrlTree => {
 
-  /**
-   * inject auth service
-   * @property {AuthService} authService
-   */
-  const authService = inject(AuthService)
+  // Injecting the AuthService using inject()
+  const authService = inject(AuthService); 
 
-  /**
-   * inject router
-   * @property {Router} router
-   */
+  // Injecting the Router using inject()
   const router = inject(Router)
 
-  // check for logged-in user
-  if(authService.isLoggedIn()){
-    return true
+  // Check if the user is logged in
+  if (authService.isLoggedIn()) {
+    return true;
   }
-  else {
-    // navigate to login page or component
-    router.navigate(['/login'])
-    return false
-  }
+
+  // If not logged in, navigate to the login page with optional query params
+  return router.createUrlTree(['/login'], {
+    //preserve the attempted URL
+    queryParams: { returnUrl: state.url }, 
+  });
 
 };

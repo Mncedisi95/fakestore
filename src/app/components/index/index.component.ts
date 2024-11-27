@@ -96,28 +96,28 @@ export class IndexComponent {
     // check what category has been selected and display those categories
     if(category === "jewelery"){
       // call the helper function from product service to fetch all jeweleries
-      this.productService.getJeweleries().subscribe(jeweleries => {
+      this.productService.getProductsByCategory(category).subscribe(jeweleries => {
         // initialize products property
         this.products = jeweleries   
       })
     }
     else if(category === 'electronics'){
       // call the helper function from product service to fetch all electronics
-      this.productService.getElectronics().subscribe(electronics => {
+      this.productService.getProductsByCategory(category).subscribe(electronics => {
          // initialize products property
          this.products = electronics
       })
     }
     else if(category === "men's clothing"){
       // call the helper function from product service to fetch all men's clothing
-      this.productService.getMenClothing().subscribe(mensclothing => {
+      this.productService.getProductsByCategory(category).subscribe(mensclothing => {
         // initialize products property
         this.products = mensclothing
       })
     }
     else if(category === "women's clothing"){
       // call the helper function from the product service to fetch all women's clothing
-      this.productService.getWomenClothing().subscribe(womenclothing => {
+      this.productService.getProductsByCategory(category).subscribe(womenclothing => {
         // initialize products property
         this.products = womenclothing
       })

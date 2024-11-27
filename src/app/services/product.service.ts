@@ -1,129 +1,133 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
-
-/**
- * Welcome to product.service.ts
- * @author Mncedisi Masondo
- * @description - Service Responsible for fecting all products from fakestore api
- */
-
+import { error } from 'node:console';
+import { catchError, Observable, of, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * Welcome to the product.service.ts file.
+ * @author Mncedisi Masondo
+ * @description Service responsible for fetching all products from the FakeStore API.
+ * @class Provides methods to interact with the FakeStore API to retrieve product data.
+ */
 export class ProductService {
 
   /**
-   * respresent api url
-   * @property {string} apiurl
+   * Represents the API URL for fetching products.
+   * @property {string} apiUrl - The URL of the FakeStore API.
    */
-  private apiurl = 'https://fakestoreapi.com/products'
+  private apiUrl = 'https://fakestoreapi.com/products'
 
   /**
    * @constructor
-   * @param {HttpClient} httpClient 
+   * @description Initializes the service with the HttpClient for making HTTP requests.
+   * @param {HttpClient} httpClient - The HttpClient service used to send requests to the API.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * @method getProducts
-   * @description - helper function that get the list of products from fakestore api
-   * @returns {products} - list of products
+   * @description Fetches the list of products from the FakeStore API.
+   * @returns {Observable<any>} An observable that emits a list of products.
    */
-  getProducts(): Observable<any>{
-    // send HTTP GET request
-    return this.httpClient.get<any>(this.apiurl)
+  getProducts(): Observable<any> {
+    // Send HTTP GET request to fetch the list of products from the API
+    return this.httpClient.get<any>(this.apiUrl).pipe(
+      catchError(error => {
+        console.log('Error fetching products:', error)
+        // Return an empty array in case of error
+        return of([])
+      })
+    )
   }
 
   /**
-   * @method getProductByID
-   * @description Helper function that get product using product ID 
-   * @param {number} productId - Product ID
-   * @returns {product} - The product  
-   */
-  getProductByID(productId: number): Observable<any>{
-    // Send HTTP GET request with ID
-    return this.httpClient.get<any>(this.apiurl + '/' + productId)
+  * @method getProductByID
+  * @description Fetches a product by its ID from the FakeStore API.
+  * @param {number} productId - The ID of the product to retrieve.
+  * @returns {Observable<any>} An observable that emits the product with the given ID.
+  */
+  getProductByID(productId: number): Observable<any> {
+    // Send HTTP GET request to fetch the product by ID
+    return this.httpClient.get<any>(this.apiUrl + '/' + productId).pipe(
+      catchError(error => {
+        console.log('Error fetching product:', error);
+        // Fallback value in case of error
+        return of(null);
+      })
+    )
   }
 
   /**
-   * @method addproduct
-   * @description Helper function that add new product on fakestore api
-   * @param {any} product - New Product
-   * @returns - new added product with new product ID 
-   */
-  addProduct(product:any): Observable<any>{
-    // send HTTP POST request 
-    return this.httpClient.post<any>(this.apiurl,product).pipe(
-      // catch errors
-      catchError((error:HttpErrorResponse) => {
-        // throw error message
-        return throwError(() => error)
+  * @method addProduct
+  * @description Sends a new product to the FakeStore API and returns the added product with its ID.
+  * @param {Product} product - The new product to add. Must include title, price, description, image and category.
+  * @returns {Observable<any>} An observable emitting the newly added product, including its generated ID.
+  * @throws {Error} If the request fails.
+  */
+  addProduct(product: any): Observable<any> {
+    // send HTTP POST request to add a new product to the fakestore API 
+    return this.httpClient.post<any>(this.apiUrl, product).pipe(
+      // Handle errors
+      catchError((error: HttpErrorResponse) => {
+        const errorMessage = `Error adding product: ${error.message}`;
+        // throw error message        
+        return throwError(() => new Error(errorMessage))
       })
     )
   }
 
   /**
    * @method updateProduct
-   * @description - Helper function that update requested product 
-   * @param {number} productId  - Product ID
-   * @param {any} data  - Updated Information
-   * @returns updated product with the sent product ID
+   * @description  Update a product's information.
+   * @param {number} productId - The ID of the product to update.
+   * @param {data<any>} data - The fields to update for the product.
+   * @returns {Observable<any>} An observable emitting the updated product.
+   * @throws {Error} If the request fails.
    */
-  updateProduct(productId: number,data:any):Observable<any>{
-    // Send HTTP PUT request
-    return this.httpClient.put<any>(this.apiurl + '/' + productId, data)
+  updateProduct(productId: number, data: any): Observable<any> {
+    // Send HTTP PUT request to update a product by its ID in the fakestore API
+    return this.httpClient.put<any>(this.apiUrl + '/' + productId, data).pipe(
+      catchError((error: HttpErrorResponse) => {
+        const errorMessage = `Error updating product with ID ${productId}: ${error.message}`;
+        return throwError(() => new Error(errorMessage));
+      })
+    )
   }
 
   /**
    * @method removeProduct
-   * @description Helper function that remove product from fakestore api
-   * @param {number} productId - product ID
-   * @returns {product} - deleted  product from faketore api
+   * @description delete a product.
+   * @param {number} productId - The ID of the product to delete.
+   * @returns {Observable<any>} An observable emitting the deleted product.
+   * @throws {Error} If the request fails.
    */
-  removeProduct(productId: number): Observable<any>{
-    // Send HTTP DELETE request
-    return this.httpClient.delete<any>(this.apiurl + '/' + productId)
+  removeProduct(productId: number): Observable<any> {
+    // Send HTTP DELETE request to remove a product by its ID from the Fakestore API
+    return this.httpClient.delete<any>(this.apiUrl + '/' + productId).pipe(
+      catchError((error: HttpErrorResponse) => {
+        const errorMessage = `Error removing product with ID ${productId}: ${error.message}`;
+        return throwError(() => new Error(errorMessage));
+      })
+    )
   }
 
   /**
-   * @method getJeweleries
-   * @description helper function that get all products under jewelery category
-   * @returns {products} list of products under jewelery category
+   * @method getProductsByCategory
+   * @description Fetches all products under a specific category.
+   * @param {string} category - The category of products to fetch.
+   * @returns {Observable<any>} An observable emitting the list of products in the specified category.
+   * @throws {HttpErrorResponse} If the HTTP request fails.
    */
-  getJeweleries(): Observable<any>{
-    // Send HTTP GET request
-     return this.httpClient.get<any>(this.apiurl + '/category/jewelery')
+  getProductsByCategory(category: string): Observable<any> {
+    // Send HTTP GET request to fetch all products under a specific category
+    return this.httpClient.get<any>(this.apiUrl + '/category/' + category).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.log(`Error fetching products in category "${category}":`, error.message);
+        return throwError(() => new Error(`Failed to fetch products in category "${category}"`));
+      })
+    )
   }
-
-  /**
-   * @method getElectronics
-   * @description helper function that list of products under electronics category
-   * @returns {products} The list of products under elelctronics category
-   */
-  getElectronics(): Observable<any>{
-    //send HTTP GET request 
-    return this.httpClient.get<any>(this.apiurl + '/category/electronics')
-  }
-
-  /**
-   * @method getMenClothing
-   * @description helper function that get list of products under men's clothing category
-   * @returns {products} - The list of products under men's category
-   */
-  getMenClothing(): Observable<any>{
-    // send HTTP GET request 
-    return this.httpClient.get<any>(this.apiurl + "/category/men's clothing")
-  }
-
-  /**
-   * @method getWomenClothing
-   * @description Helper function that get list of products under women's clothing category
-   * @returns {products} The list of products under women's clothing category
-   */
-  getWomenClothing(): Observable<any>{
-    // send HTTP GET request
-    return this.httpClient.get<any>(this.apiurl + "/category/women's clothing")
-  }
- 
 }

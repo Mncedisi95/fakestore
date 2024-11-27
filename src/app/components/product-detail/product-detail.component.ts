@@ -44,38 +44,62 @@ export class ProductDetailComponent {
     */
    constructor(private router: Router,private activatedRoute:ActivatedRoute,private productService:ProductService){}
  
-     /**
-   * @description initializes the component after angular fist display the data-bound properties
-   * 
-   * Fetch product data from the fakestore api 
+  /**
+   * @description Initializes the component after Angular displays data-bound properties.
+   * Fetches product data from the FakeStore API based on the route parameter.
    */
   ngOnInit(): void{
-    //Get Passed product id
-    this.activatedRoute.params.subscribe(params => {
+    // Get the product ID from the route parameter
+    this.activatedRoute.params.subscribe({
+      next: (params) => {
       // Initialize product id property with the passed ID
       this.productId = +params['id']
-    })
 
-    // call the helper function from the service to get product using a product id
-    this.productService.getProductByID(this.productId).subscribe({
-      next: (data) => {
-        // after matching, initialize product property
-        this.product = data  
+      if (isNaN(this.productId) || this.productId <= 0) {
+        console.log('Invalid product ID');
+        return;
+      }
+
+      // load product
+      this.loadProduct()
+
       },
       error: (error) => {
-        //print out any error might occur
+        console.log(error);
+      }
+    })
+  }
+
+  /**
+   * @method loadProduct
+   * @description fetch product details by ID
+   */
+  loadProduct(): void {
+    //  Calls the ProductService to fetch product details by ID
+    this.productService.getProductByID(this.productId).subscribe({
+      next: (data) => {
+         // After successful response, initialize the product property
+        this.product = data
+      },
+      error: (error) => {
+        //Handle errors
         console.log(error);
       }
     })
   }
   
-   /**
-   * @method editProduct
-   * @description Helper function that redirects user to edit product component
-   */
-   editProduct():void{
-    // navigate to edit product component/page
-    this.router.navigate(['/editproduct', this.product.id])
+/**
+ * @method editProduct
+ * @description Navigates to the edit product component/page with the current product ID.
+ * @throws {Error} If the product ID is invalid or undefined.
+ */
+   editProduct():void {
+     // Check if the product and its ID are valid
+     if (!this.product || !this.product.id) {
+      console.log('Invalid product: Product ID is required for navigation.');
+     }
+     // navigate to edit product component/page
+     this.router.navigate(['/editproduct', this.product.id])
   }
 
   /**
@@ -108,6 +132,5 @@ export class ProductDetailComponent {
     }
   }) 
  }
-
 
 }
