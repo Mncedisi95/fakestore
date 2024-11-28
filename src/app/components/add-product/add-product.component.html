@@ -52,10 +52,10 @@
             </div>
             <button class="btn-primary" (click)="addProduct()">Add Product</button>
             <div>
-                <input *ngIf="showSuccessMessage" type="text" class="alert-success" placeholder="New Product Added Successfully."/>
+                <input *ngIf="showSuccessMessage" type="text" class="alert-success" placeholder= {{successMessage}}/>
             </div>
             <div>
-                <input *ngIf="showErrorMessage" type="text" class="alert-danger" placeholder="Adding New Product Failed."/>
+                <input *ngIf="showErrorMessage" type="text" class="alert-danger" placeholder={{errorMessage}}/>
             </div>
         </form>
     </div>

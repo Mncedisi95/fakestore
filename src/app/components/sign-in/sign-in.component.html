@@ -21,7 +21,7 @@
     
         <button class="btn-primary" type="submit">Login</button>
         <div>
-            <input *ngIf="showErrorMesage" class="alert-danger" placeholder="Incorrect Password or Username."/>
+            <input *ngIf="isErrorVisible" class="alert-danger" placeholder={{errorMessage}}/>
         </div>
     </form>
 </div>
