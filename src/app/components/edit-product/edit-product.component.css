@@ -9,21 +9,41 @@ h2{
     font-size: 30px;
 }
 
-input{
+input,
+textarea,
+.select-box {
     width: 330px;
     height: 40px;
     font-size: 16px;
-    border: 1.5px solid #dedede;
+    border: 1.5px solid #ddd;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
-textarea{
-    width: 330px;
+input:focus,
+textarea:focus,
+.select-box:focus {
+    color: #495057;
+    background-color: rgba(0, 0, 0, 0.01);
+    border-color: #b4add3;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(105, 90, 166, 0.25);
+    transition: all 0.3s ease;
+}
+
+input:hover, 
+textarea:hover, 
+.select-box:hover {
+    border-color: #b4add3;
+}
+
+textarea {
     height: 120px;
-    border-radius: 5px;
-    border: 1.5 solid #dedede;
-    font-size: 16px;
+}
+
+.select-box {
+    height: 38px;
+    width: 335px;
 }
 
 label{
@@ -47,6 +67,7 @@ button{
     display: block;
     margin-top: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary{
@@ -90,14 +111,6 @@ button{
     max-width: 800;
 }
 
-.select-box{
-    width: 337px;
-    height: 38px;
-    border: 1px solid #dedede;
-    margin: 5px 0 10px;
-    border-radius: 5px;
-}
-
 .alert-danger{
     text-align: center;
     margin-top: 10px;
@@ -116,46 +129,102 @@ button{
     border-radius: 0.2857rem
 }
 
-/* Small Device = 320px */
+/* Small Device = 320px - 480px */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 
-@media only screen and (max-width: 479px) {
-
-    h2{
-        font-size: 13px;
+    h2 {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 8x;
     }
 
-    label{
-        font-size: 10px;
+    label {
+        font-size: 12px;
     }
 
-    button{
-        font-size: 10px;
-        width: 280px;
+    button {
+        font-size: 12px;
+        width: 250px;
+        padding: 10px 12px;
     }
 
-    input{
-        height: 30px;
-        font-size: 10px;
-        width: 270px;
+    input, textarea, .select-box {
+        height: 35px;
+        font-size: 12px;
+        width: 95%;
     }
 
     .select-box{
-        font-size: 10px;
-        height: 30px;
-        width: 275px;
+        width: 97%;
     }
 
     textarea{
-        height: 70px;
-        font-size: 10px;
-        width: 270px;
+        height: 80px;
     }
 
-    small{
+    small {
         font-size: 10px;
     }
 
-    .section{
-        padding: 90px 0;
-    } 
+    .section {
+        padding: 65px 15px;
+    }
+}
+
+/* Medium Devices: 480px - 768px */
+@media  only screen and (min-width: 481px) and (max-width: 768px) {
+
+    h2{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    label{
+        font-size: 14px;
+    }
+
+    input, textarea, .select-box {
+        width: 97%;
+        font-size: 14px;
+        height: 38px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+}
+
+/* Large Devices: 768px - 1200px */
+@media  only screen and (min-width: 769px) and (max-width: 1200px) {
+
+    h2 {
+        font-size: 24px;
+        line-height: 1.6;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input, textarea, .select-box {
+        width: 98%;
+        font-size: 16px;
+        height: 40px;
+    }
+
+    textarea{
+        height: 120px;
+    }
+
+    button{
+        width: 350px;
+    }
+
+    .section {
+        padding: 80px 30px;
+    }   
 }

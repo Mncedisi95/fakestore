@@ -6,10 +6,7 @@
         <div class="product-list">
             <form>
                 <div>
-                    <input id="search" type="text" placeholder="Search.." class="left"/>  
-                </div>
-                <div>
-                    <button>Search</button>
+                    <input id="search"[(ngModel)]=search (input)="onSearch()" [ngModelOptions]="{standalone: true}" type="text" placeholder="Search.." class="left"/>  
                 </div>
                 <div class="right">
                     <a>Fliter by Category:</a>

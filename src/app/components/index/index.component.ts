@@ -51,7 +51,7 @@ export class IndexComponent {
    * Temporary array used for intermediate calculations or manipulation.
    * @property {any[]} arr - Auxiliary array for data processing.
    */
-  arr: any[] = []
+  originalProducts: any[] = []
 
   /**
   * Represents the current page index in the pagination.
@@ -93,7 +93,8 @@ export class IndexComponent {
     this.productService.getProducts().subscribe({
       next: (data) => {
         // Assign fetched data to the products property
-        this.products = data
+        this.originalProducts = data
+        this.products = this.originalProducts
         // Update total product count
         this.items = this.products.length
       },
@@ -174,5 +175,29 @@ export class IndexComponent {
     this.lowIndex = event.pageIndex * event.pageSize
     this.highIndex = this.lowIndex + event.pageSize
     return event
+  }
+
+  /**
+   * @method onSearch
+   * @description Filters products based on the search term.
+   */
+  onSearch():  void{
+
+    const term = this.search?.toLowerCase() || ''
+
+     // If the search term is empty, reset the products list
+    if(!term.trim()){
+      this.products = this.originalProducts
+      return
+    }
+
+    // Filter products based on the search term
+    this.products = this.originalProducts.filter(item => {
+
+     const matchesSearch = item.title.toLowerCase().includes(term) ||
+      item.description.toLowerCase().includes(term)
+
+      return matchesSearch
+    })
   }
 }

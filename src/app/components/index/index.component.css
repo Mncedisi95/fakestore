@@ -21,6 +21,8 @@ h6{
 }
 
 .section{
+    max-width: 1500px;
+    margin: 0 auto;
     padding: 70px 15px;
 }
 
@@ -64,6 +66,8 @@ h6{
 
 .product-card:hover{
     background-color: #fff;
+    border: 1px solid #DA70D6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
 }
 
 .select-box{
@@ -82,25 +86,10 @@ h6{
     margin-left: 20px;
 }
 
-button{
-    width: 65px;
-    height: 35px;
-    margin-left: 5px;
-    border-radius: 5px;
-    border: 1.5px solid #ddd;
-    color: #fff;
-    background-color: #BA55D3;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: #DA70D6;
-}
-
 form{
     display: flex;
-    margin: 5px;
-    padding: 5px 5px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 input{
@@ -119,71 +108,53 @@ input:focus{
 }
 
 mat-paginator{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-color:  #695aa6;
     color: #fff;
     width: 1180px;
     margin-left: 75px;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px){
-
-    .product-card{
-        width: 120px;
-    }
-
-    .product-card img{
-        width: 120px;
-        height: 120px;
-    }
-
-    mat-paginator{
-        width: 50px;
-    }
-
-}
-
 
 /* Small Device = 320px */
-
-@media only screen and (max-width: 479px){
+@media only screen and (max-width: 480px){
 
     .product-card{
-        width: 100px;
+        width: 150px;
     }
 
     .product-card img{
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 90px;
     }
 
     mat-paginator{
-        width: 320px;
+        width: 100%;
         font-size: 10px;
-        margin-left: 30px;
+        margin: 5px 0;
     }
 
-    .right{
-        margin-left: 70px;
+    .right {
+        margin-left: 10px;
     }
 
     .left{
-        margin-left: 5px;
+        margin-left: 50px;
     }
 
     input{
-        width: 50px;
-        height: 15px;
-    }
-
-    button{
-        font-size: 10px;
-        height: 20px
+        width: 100px;
+        font-size: 12px;
     }
 
     .select-box{
         width: 100px;
         height: 20px;
-        font-size: 8px;
+        font-size: 10px;
     }
 
     a{
@@ -191,7 +162,7 @@ mat-paginator{
     }
 
     h2{
-        font-size: 15px;
+        font-size: 20px;
     }
 
     h5,h6{
@@ -199,11 +170,89 @@ mat-paginator{
     }
 
     .section{
-        padding: 90px 0;
+        padding: 70px 10px;
     }
+}
 
+@media only screen and (min-width:481px) and (max-width:768px){
 
 }
+
+/* Large Devices: 768px - 1200px */
+@media only screen and (min-width:769px) and (max-width: 1024px){
+
+    .product-card{
+        width: 160px;
+        padding: 12px;
+        margin: 10px;
+    }
+
+    .product-card img{
+        width: 130px;
+        height: 120px;
+    }
+
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px; 
+        justify-content: center; 
+        padding: 15px;
+    }
+
+    mat-paginator {
+        width: 80%; 
+        margin: 20px auto;
+        font-size: 14px;
+    }
+
+    .select-box {
+        width: 180px; 
+        height: 35px;
+        font-size: 14px;
+    }
+
+    input {
+        width: 260px; 
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .right {
+        margin-left: 10px; 
+    }
+
+    .left {
+        margin-left: 10px;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 28px; 
+    }
+
+    h5, h6 {
+        font-size: 12px; 
+    }
+
+    .section {
+        padding: 50px 15px; 
+        max-width: 1000px; 
+        margin: 0 auto;
+    }
+
+    .product-container {
+        display: flex;
+        flex-direction: column; 
+    }
+}
+
 
 
 
