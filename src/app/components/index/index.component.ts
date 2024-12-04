@@ -1,19 +1,20 @@
-import { CurrencyPipe, NgFor, SlicePipe } from '@angular/common';
+import { CurrencyPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { RatingService } from '../../services/rating.service';
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [NgFor, CurrencyPipe, FormsModule, MatPaginatorModule, SlicePipe],
+  imports: [NgIf, NgFor, CurrencyPipe, FormsModule, MatPaginatorModule, SlicePipe],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
 
 /**
- * Welocome to the index.component.ts File
+ * Welcome to the index.component.ts File
 * @author Mncedisi Masondo
 * @class IndexComponent
 * 
@@ -23,10 +24,10 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 */
 export class IndexComponent {
 
- /**
- * Represents the array of products fetched from the API.
- * @property {any[]} products - Array of product objects.
- */
+  /**
+  * Represents the array of products fetched from the API.
+  * @property {any[]} products - Array of product objects.
+  */
   products: any[] = []
 
   /**
@@ -49,7 +50,7 @@ export class IndexComponent {
 
   /**
    * Temporary array used for intermediate calculations or manipulation.
-   * @property {any[]} arr - Auxiliary array for data processing.
+   * @property {any[]} originalProducts - Auxiliary array for data processing.
    */
   originalProducts: any[] = []
 
@@ -71,13 +72,14 @@ export class IndexComponent {
   */
   highIndex: number = 8
 
- /**
- * @constructor
- * @description Initializes the component with required dependencies.
- * @param {ProductService} productService - Service for product data and API interactions.
- * @param {Router} router - Angular Router for navigation.
- */
-  constructor(private productService: ProductService, private router: Router) { }
+  /**
+  * @constructor
+  * @description Initializes the component with required dependencies.
+  * @param {ProductService} productService - Service for product data and API interactions.
+  * @param {Router} router - Angular Router for navigation.
+  * @param {RatingService} ratingService - Service for rating the product
+  */
+  constructor(private productService: ProductService, private router: Router, private ratingService: RatingService) { }
 
   /**
   * @description Initializes the component after Angular first displays the data-bound properties.
@@ -181,12 +183,12 @@ export class IndexComponent {
    * @method onSearch
    * @description Filters products based on the search term.
    */
-  onSearch():  void{
+  onSearch(): void {
 
     const term = this.search?.toLowerCase() || ''
 
-     // If the search term is empty, reset the products list
-    if(!term.trim()){
+    // If the search term is empty, reset the products list
+    if (!term.trim()) {
       this.products = this.originalProducts
       return
     }
@@ -194,10 +196,21 @@ export class IndexComponent {
     // Filter products based on the search term
     this.products = this.originalProducts.filter(item => {
 
-     const matchesSearch = item.title.toLowerCase().includes(term) ||
-      item.description.toLowerCase().includes(term)
+      const matchesSearch = item.title.toLowerCase().includes(term) ||
+        item.description.toLowerCase().includes(term)
 
       return matchesSearch
     })
+  }
+
+  /**
+   * @method getStars
+   * @description Generates an array representing a star rating.
+   * @param {number} rate - The numeric rating (between 0 and 5).
+   * @returns {number[]} - An array of star representations (1 for full, 0.5 for half, 0 for empty).
+   */
+  getStars(rate: number): number[] {
+    // call the helper function in the rating service.
+    return this.ratingService.getStars(rate)
   }
 }

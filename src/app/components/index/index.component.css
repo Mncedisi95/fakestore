@@ -119,6 +119,29 @@ mat-paginator{
     margin-left: 75px;
 }
 
+.rating{
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullstar{
+    font-size: 15px;
+    color: #ffc107;
+}
+
+.halfstar{
+    color: #ffc107;
+    font-size: 15px;
+    position: relative;
+    clip-path: inset(0 50% 0 0)
+}
+
+.emptystar{
+    color: #ddd; 
+    font-size: 15px;
+}
 
 /* Small Device = 320px */
 @media only screen and (max-width: 480px){

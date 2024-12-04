@@ -1,11 +1,12 @@
-import { CurrencyPipe, NgIf } from '@angular/common';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { RatingService } from '../../services/rating.service';
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [NgIf, CurrencyPipe],
+  imports: [NgIf, NgFor ,CurrencyPipe],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
@@ -48,8 +49,9 @@ export class ProductDetailComponent {
   * @param {Router} router - Service for navigation between components.
   * @param {ActivatedRoute} activatedRoute - Service for accessing route-specific parameters and data.
   * @param {ProductService} productService - Service for performing operations on products.
+  * @param {RatingService} ratingService - Service for performing ratings of products
   */
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private productService: ProductService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private productService: ProductService,private ratingService: RatingService) { }
 
   /**
    * @description Initializes the component after Angular displays data-bound properties.
@@ -137,6 +139,17 @@ export class ProductDetailComponent {
         }, 3000)
       }
     })
+  }
+
+  /**
+   * @method getStars
+   * @description Generates an array representing a star rating.
+   * @param {number} rate - The numeric rating (between 0 and 5).
+   * @returns {number[]} - An array of star representations (1 for full, 0.5 for half, 0 for empty).
+   */
+  getStars(rate: number): number[] {
+    // call the helper function in the rating service.
+    return this.ratingService.getStars(rate)
   }
 
 }

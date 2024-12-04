@@ -26,7 +26,13 @@
                     <img [src]="product.image"/>
                 </div>
                 <h5>{{product.title}}</h5>
-                <h6>{{product.rating.rate}}</h6>
+                <div class="rating">
+                    <ng-container *ngFor="let star of getStars(product.rating.rate)">
+                        <span *ngIf="star === 1" class="fullstar">&#9733;</span>
+                        <span *ngIf="star === 0.5" class="halfstar">&#9734;</span>
+                        <span *ngIf="star === 0" class="emptystar">&#9734;</span>
+                    </ng-container>
+                </div>
                 <h6>{{product.price | currency}}</h6>
             </div>
         </div>
